@@ -8,24 +8,25 @@ export default function TodoList(){
     const [todos,setTodos]=useState([])
 
     const submitHandle=(input)=>{
-        if(!input.value ){
-            return
-        }
         setTodos([input,...todos])
     }
-    console.log(todos)
+
+    function updateTodo(todo){
+        setTodos(todos.map((item)=>{
+            return item.id===todo.id ? todo : item
+        }))
+    }
+
     const completeTodo=(id)=>{
+        console.log('hi')
         let newTodo=todos.map((todo)=>{
             if(todo.id===id){
+                console.log(todo)
                 todo.isComplete=!todo.isComplete
             }
             return todo
         })
         setTodos(newTodo)
-        
-    }
-
-    const updateTodo=()=>{
         
     }
 
