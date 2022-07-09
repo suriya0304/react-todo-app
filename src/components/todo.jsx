@@ -14,7 +14,6 @@ export default function Todo({todos,removeTodo,updateTodo,completeTodo}){
     }
 
     if(edit.id){
-        console.log(edit)
         return <TodoForm edit={edit.value} onSubmit={submitUpdate}/>
     }
 

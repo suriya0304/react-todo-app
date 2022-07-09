@@ -2,7 +2,7 @@ import React, { useState,useRef,useEffect } from 'react';
 
 
 function TodoForm(props){
-    const [input,setInput]=useState('')
+    const [input,setInput]=useState(props.edit?props.edit:'')
     
     const inputRef = useRef(null)
 
@@ -27,7 +27,7 @@ function TodoForm(props){
         <div>
           <input
             placeholder='Update your item'
-            value={props.edit}
+            value={input}
             onChange={changeHandle}
             name='text'
             ref={inputRef}

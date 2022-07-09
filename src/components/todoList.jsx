@@ -18,10 +18,8 @@ export default function TodoList(){
     }
 
     const completeTodo=(id)=>{
-        console.log('hi')
         let newTodo=todos.map((todo)=>{
             if(todo.id===id){
-                console.log(todo)
                 todo.isComplete=!todo.isComplete
             }
             return todo
